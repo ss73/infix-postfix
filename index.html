@@ -138,23 +138,24 @@
                 <li>OR Boolean OR operator</li>
             </ul>
             Precedense can be overridden by the use of parenthesis.
-            
-            <h3>Input infix, space between each token</h3>
-            <p>
-                <input id="input" type="text" size=40/>
-                <input type="button" value="convert" onclick="doClick()"/>
-                <script>
-                    function doClick() {
-                        let inp = document.getElementById("input").value;
-                        let outp = getPostFix(inp);
-                        document.getElementById("output").value = outp;
-                    }
-                </script>
-            </p>
-            <h3>Output, postfix (reverse polish notation)</h3>
-            <p>
-                <input id="output" type="text" size=40/>
-            </p>
+            <div class="w3-container w3-round w3-blue-gray">
+                <h3>Input infix, space between each token</h3>
+                <p>
+                    <input id="input" type="text" size=40/>
+                    <input type="button" value="convert" onclick="doClick()"/>
+                    <script>
+                        function doClick() {
+                            let inp = document.getElementById("input").value;
+                            let outp = getPostFix(inp);
+                            document.getElementById("output").value = outp;
+                        }
+                    </script>
+                </p>
+                <h3>Output, postfix (reverse polish notation)</h3>
+                <p>
+                    <input id="output" type="text" size=40/>
+                </p>
+            </div>
             <h3>Infix Expressions</h3>
             Expressions follow the pattern <b>Operand <i>Operator</i> Operand</b>. The <i>Operator</i> is between <i>Operand</i>s.
             These expressions are what would be considered "standard" and are called <i>infix</i>, e.g. <b>A + B</b>.
