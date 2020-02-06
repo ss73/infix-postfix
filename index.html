@@ -5,12 +5,12 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+        html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </style>
     <script>
         var postfix = "";
         var stack = [];
-
+        
         function getPostFix(expression) {
             postfix = "";
             stack = [];
@@ -121,54 +121,56 @@
 </head>
 <body>
     <div class="w3-card-4 w3-margin w3-white">
-    <h1>Infix to postfix converter</h1>
-    This small example coverts infix expressions to postfix expressions. Both arithmetic and Boolean expressions
-    can be entered. The arithmetic operators are (in order of precedence):
-    <ul>
-        <li>~ Unary negative operator</li>
-        <li>^ Power operator</li>
-        <li>*, / Multiplication and division operators</li>
-        <li>+, - Addition and subtraction operators</li>
-    </ul>
-    The Boolean operators are (in order of precedence):
-    <ul>
-        <li>NOT Unary inverse operator</li>
-        <li>AND Boolean AND operator</li>
-        <li>OR Boolean OR operator</li>
-    </ul>
-    Precedense can be overridden by the use of parenthesis.
-
-    <h3>Input infix, space between each token</h3>
-    <p>
-        <input id="input" type="text" size=40/>
-        <input type="button" value="convert" onclick="doClick()"/>
-        <script>
-            function doClick() {
-                let inp = document.getElementById("input").value;
-                let outp = getPostFix(inp);
-                document.getElementById("output").value = outp;
-            }
-        </script>
-    </p>
-    <h3>Output, postfix (reverse polish notation)</h3>
-    <p>
-        <input id="output" type="text" size=40/>
-    </p>
-    <h3>Infix Expressions</h3>
-        Expressions follow the pattern <b>Operand <i>Operator</i> Operand</b>. The <i>Operator</i> is between <i>Operand</i>s.
-        These expressions are what would be considered "standard" and are called <i>infix</i>, e.g. <b>A + B</b>.
-
-    <h3>Postfix Expressions</h3>
-        Expressions follow the pattern of <b>Operand Operand <i>Operator</i></b>. An <i>Operator</i> is preceeded by both the <i>Operand</i>s. 
-        e.g. <b>A B +</b>
-    <h3>Examples</h3>
-    <ul>
-        <li>Expression <a href="#" onclick="document.getElementById('input').value = 'A + ( B * C - ( D / ~ E ^ F ) * G ) * H'"><b>A+(B*C-(D/~E^F)*G)*H</b></a></li>
-        <li>converts to <b>ABC*DE~F^/G*-H*+</b> in postfix notation</li></li>
-        <br/>
-        <li>Expression <a href="#" onclick="document.getElementById('input').value = '( funny OR handsome ) AND NOT ( short OR poor )'"><b>(funny OR handsome) AND NOT (short OR poor)</b></a></li> 
-        <li>Converts to <b>funny handsome OR short poor OR NOT AND</b> in postfix notation</li>
-        <br/>
-    </ul>
+        <div class="w3-container">
+            <h1>Infix to postfix converter</h1>
+            This small example coverts infix expressions to postfix expressions. Both arithmetic and Boolean expressions
+            can be entered. The arithmetic operators are (in order of precedence):
+            <ul>
+                <li>~ Unary negative operator</li>
+                <li>^ Power operator</li>
+                <li>*, / Multiplication and division operators</li>
+                <li>+, - Addition and subtraction operators</li>
+            </ul>
+            The Boolean operators are (in order of precedence):
+            <ul>
+                <li>NOT Unary inverse operator</li>
+                <li>AND Boolean AND operator</li>
+                <li>OR Boolean OR operator</li>
+            </ul>
+            Precedense can be overridden by the use of parenthesis.
+            
+            <h3>Input infix, space between each token</h3>
+            <p>
+                <input id="input" type="text" size=40/>
+                <input type="button" value="convert" onclick="doClick()"/>
+                <script>
+                    function doClick() {
+                        let inp = document.getElementById("input").value;
+                        let outp = getPostFix(inp);
+                        document.getElementById("output").value = outp;
+                    }
+                </script>
+            </p>
+            <h3>Output, postfix (reverse polish notation)</h3>
+            <p>
+                <input id="output" type="text" size=40/>
+            </p>
+            <h3>Infix Expressions</h3>
+            Expressions follow the pattern <b>Operand <i>Operator</i> Operand</b>. The <i>Operator</i> is between <i>Operand</i>s.
+            These expressions are what would be considered "standard" and are called <i>infix</i>, e.g. <b>A + B</b>.
+            
+            <h3>Postfix Expressions</h3>
+            Expressions follow the pattern of <b>Operand Operand <i>Operator</i></b>. An <i>Operator</i> is preceeded by both the <i>Operand</i>s. 
+            e.g. <b>A B +</b>
+            <h3>Examples</h3>
+            <ul>
+                <li>Expression <a href="#" onclick="document.getElementById('input').value = 'A + ( B * C - ( D / ~ E ^ F ) * G ) * H'"><b>A+(B*C-(D/~E^F)*G)*H</b></a></li>
+                <li>converts to <b>ABC*DE~F^/G*-H*+</b> in postfix notation</li></li>
+                <br/>
+                <li>Expression <a href="#" onclick="document.getElementById('input').value = '( funny OR handsome ) AND NOT ( short OR poor )'"><b>(funny OR handsome) AND NOT (short OR poor)</b></a></li> 
+                <li>Converts to <b>funny handsome OR short poor OR NOT AND</b> in postfix notation</li>
+                <br/>
+            </ul>
+        </div>
     </div>
 </body>
